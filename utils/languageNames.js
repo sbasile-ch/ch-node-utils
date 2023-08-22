@@ -23,10 +23,9 @@ function getNativeNamesObjectArray(isoCodes) {
     return isoCodes.map((isoCode) => ({ IsoCode: isoCode, Name: iso6391.getNativeName(isoCode) }) );
 }
 
-function sourceLocale(serviceName, localeDir = 'locale' ) {
+function sourceLocale( localesDir ) {
 
-    localePath = path.join(localeDir, serviceName);
-    return getNativeNamesObjectArray (dirs.get (localePath));
+    return getNativeNamesObjectArray (dirs.get (localesDir));
 }
 
 module.exports = {

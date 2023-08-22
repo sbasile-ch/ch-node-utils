@@ -1,6 +1,6 @@
 {
   "name": "@basilest-ch/ch-node-utils",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "set of node utils which can be used across repos/projects",
   "main": "utils.js",
   "repository": {
