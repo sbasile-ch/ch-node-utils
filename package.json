@@ -1,0 +1,17 @@
+{
+  "name": "@basilest-ch/ch-node-utils",
+  "version": "1.0.0",
+  "description": "set of node utils which can be used across repos/projects",
+  "main": "utils.js",
+  "repository": {
+    "url": "https://github.com/sbasile-ch/ch-node-utils"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "iso-639-1": "^3.0.0"
+  }
+}
