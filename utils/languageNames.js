@@ -23,9 +23,20 @@ function getNativeNamesObjectArray(isoCodes) {
     return isoCodes.map((isoCode) => ({ IsoCode: isoCode, Name: iso6391.getNativeName(isoCode) }) );
 }
 
-function sourceLocale( localesDir ) {
 
-    return getNativeNamesObjectArray (dirs.get (localesDir));
+// custom sort to leave "en" always at 1st position
+function _customSort(a, b) {
+  if (a === "en") { return -1; } // 'en' is considered smaller, so it will be placed at the beginning
+  if (b === "en") { return  1; }
+
+  return a.localeCompare(b); // Sort other elements in ascending order
+}
+
+
+function sourceLocales( localesDir ) {
+
+    const  localesArray = dirs.get (localesDir);
+    return getNativeNamesObjectArray (localesArray.sort(_customSort));
 }
 
 module.exports = {
@@ -33,5 +44,5 @@ module.exports = {
      getNativeNamesArray,
      getNamesObjectArray,
      getNativeNamesObjectArray,
-     sourceLocale
+     sourceLocales
 };
