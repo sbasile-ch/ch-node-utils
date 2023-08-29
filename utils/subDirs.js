@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs   from 'fs';
+import path from 'path';
 
-function get(dirPath) {
+export function getSubDirs (dirPath) {
   // Read the contents of the directory
   const contents = fs.readdirSync(dirPath);
 
@@ -13,7 +13,3 @@ function get(dirPath) {
 
   return subDirectories;
 }
-
-module.exports = {
-     get
-};

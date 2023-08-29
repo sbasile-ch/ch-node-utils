@@ -1,21 +1,21 @@
 
-const path    = require('path');
-const iso6391 = require('iso-639-1');
-const dirs    = require("./subDirs");
+import path    from 'path';
+import iso6391 from 'iso-639-1';
+import { getSubDirs } from "./subDirs.js";
 
-function getNamesArray(isoCodes) {
+export function getNamesArray(isoCodes) {
     return isoCodes.map((isoCode) => iso6391.getName(isoCode));
 }
 
-function getNativeNamesArray(isoCodes) {
+export function getNativeNamesArray(isoCodes) {
     return isoCodes.map((isoCode) => iso6391.getNativeName(isoCode));
 }
 
-function getNamesObjectArray(isoCodes) {
+export function getNamesObjectArray(isoCodes) {
     return isoCodes.map((isoCode) => ({ IsoCode: isoCode, Name: iso6391.getName(isoCode) }) );
 }
 
-function getNativeNamesObjectArray(isoCodes) {
+export function getNativeNamesObjectArray(isoCodes) {
     return isoCodes.map((isoCode) => ({ IsoCode: isoCode, Name: iso6391.getNativeName(isoCode) }) );
 }
 
@@ -29,20 +29,11 @@ function _customSort(a, b) {
   return a.localeCompare(b); // Sort other elements in ascending order
 }
 
-function sourceLocales( localesDir ) {
-    const  localesArray = dirs.get (localesDir);
+export function sourceLocales( localesDir ) {
+    const  localesArray = getSubDirs (localesDir);
     return getNativeNamesObjectArray (localesArray.sort(_customSort));
 }
 
-function isSupportedLocale( localesDir, locale ) {
-    return locale ? dirs.get (localesDir).includes (locale) : false;
+export function isSupportedLocale( localesDir, locale ) {
+    return locale ? getSubDirs (localesDir).includes (locale) : false;
 }
-
-module.exports = {
-     getNamesArray,
-     getNativeNamesArray,
-     getNamesObjectArray,
-     getNativeNamesObjectArray,
-     sourceLocales,
-     isSupportedLocale
-};
