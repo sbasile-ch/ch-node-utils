@@ -1,12 +1,13 @@
 import { getSubDirs } from './utils/subDirs.js';
-import { addData }    from './utils/i18nCh.js';
 import {
      getNamesArray,
      getNativeNamesArray,
      getNamesObjectArray,
      getNativeNamesObjectArray,
      sourceLocales,
-     isSupportedLocale } from './utils/languageNames.js';
+     isSupportedLocale,
+     addTranslations
+} from './utils/languageNames.js';
 
 const chNodeUtils = {
     getSubDirs,
@@ -16,7 +17,7 @@ const chNodeUtils = {
     getNativeNamesObjectArray,
     sourceLocales,
     isSupportedLocale,
-    addData,
+    addTranslations
 };
 
 export default chNodeUtils;
