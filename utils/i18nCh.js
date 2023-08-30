@@ -4,7 +4,7 @@ import path from 'path';
 import fs, { readdirSync, lstatSync } from 'fs'
 
 // load all the file names (excluded .json) present in a certain dir
-export function _loadAllNamespaces (localesFolder) {
+function _loadAllNamespaces (localesFolder) {
     const jsonFiles = [];
 
     fs.readdirSync(localesFolder).forEach((file) => {

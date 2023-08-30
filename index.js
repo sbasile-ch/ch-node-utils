@@ -1,5 +1,5 @@
 import { getSubDirs } from './utils/subDirs.js';
-import { _loadAllNamespaces, addData } from './utils/Locales.js';
+import { addData }    from './utils/i18nCh.js';
 import {
      getNamesArray,
      getNativeNamesArray,
@@ -17,7 +17,6 @@ const chNodeUtils = {
     sourceLocales,
     isSupportedLocale,
     addData,
-    _loadAllNamespaces,
 };
 
 export default chNodeUtils;
