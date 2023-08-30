@@ -3,10 +3,12 @@ import {
      getNamesArray,
      getNativeNamesArray,
      getNamesObjectArray,
+     _customSort,
      getNativeNamesObjectArray,
      sourceLocales,
      isSupportedLocale,
-     addTranslations
+     addTranslations,
+     addTranslations3,
 } from './utils/languageNames.js';
 
 const chNodeUtils = {
@@ -14,10 +16,12 @@ const chNodeUtils = {
     getNamesArray,
     getNativeNamesArray,
     getNamesObjectArray,
+     _customSort,
     getNativeNamesObjectArray,
     sourceLocales,
     isSupportedLocale,
-    addTranslations
+    addTranslations,
+    addTranslations3,
 };
 
 export default chNodeUtils;

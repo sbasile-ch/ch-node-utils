@@ -25,7 +25,7 @@ export function getNativeNamesObjectArray(isoCodes) {
 
 
 // custom sort to leave "en" always at 1st position
-function _customSort(a, b) {
+export function _customSort(a, b) {
   if (a === "en") { return -1; } // 'en' is considered smaller, so it will be placed at the beginning
   if (b === "en") { return  1; }
 
@@ -39,6 +39,14 @@ export function sourceLocales( localesDir ) {
 
 export function isSupportedLocale( localesDir, locale ) {
     return locale ? getSubDirs (localesDir).includes (locale) : false;
+}
+
+export function addTranslations( localesDir, locale ) {
+    return locale ? getSubDirs (localesDir).includes (locale) : false;
+}
+
+export function addTranslations3 (localesFolder, lang, nameSpaces, vars) {
+    console.log('a');
 }
 
 
@@ -58,7 +66,7 @@ function _loadAllNamespaces (localesFolder) {
 }
 
 // load all the file names (excluded extension: .json) present in a certain dir
-export function addTranslations (localesFolder, lang, nameSpaces, vars) {
+function addTranslations2 (localesFolder, lang, nameSpaces, vars) {
     var data = {}
 
     if (nameSpaces.length === 0) {
