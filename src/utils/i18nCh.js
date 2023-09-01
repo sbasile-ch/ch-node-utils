@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addTranslations2 = void 0;
+exports.addTranslations = void 0;
 const tslib_1 = require("tslib");
 const i18next_1 = tslib_1.__importDefault(require("i18next"));
 const i18next_fs_backend_1 = tslib_1.__importDefault(require("i18next-fs-backend"));
@@ -15,7 +15,7 @@ function _loadAllNamespaces(localesFolder) {
     });
     return jsonFiles;
 }
-function addTranslations2(localesFolder, lang, nameSpaces, vars = {}) {
+function addTranslations(localesFolder, lang, nameSpaces, vars = {}) {
     let data = {};
     if (nameSpaces.length === 0) {
         nameSpaces = _loadAllNamespaces(path_1.default.join(localesFolder, 'en'));
@@ -50,5 +50,5 @@ function addTranslations2(localesFolder, lang, nameSpaces, vars = {}) {
     }
     return data;
 }
-exports.addTranslations2 = addTranslations2;
+exports.addTranslations = addTranslations;
 //# sourceMappingURL=i18nCh.js.map

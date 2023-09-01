@@ -13,4 +13,3 @@ function getSubDirs(dirPath) {
     return subDirectories;
 }
 exports.getSubDirs = getSubDirs;
-//# sourceMappingURL=subDirs.js.map
