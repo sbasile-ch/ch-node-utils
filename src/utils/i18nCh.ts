@@ -18,9 +18,9 @@ export default class i18nCh {
    }
 
    // load all the file names (excluded extension: .json) present in a certain dir
-   addTranslations (localesFolder: string, lang: string, nameSpaces: string[], vars: any = {}) {
-      // let data: keyPairs = {}; 
-      let data: any = {}; 
+   static addTranslations (localesFolder: string, lang: string, nameSpaces: string[], vars: any = {}) {
+      // let data: keyPairs = {};
+      let data: any = {};
 
       if (nameSpaces.length === 0) {
          nameSpaces =  i18nCh._loadAllNamespaces(path.join(localesFolder, 'en'));
